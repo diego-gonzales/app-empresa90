@@ -1,0 +1,20 @@
+<mat-card class="mymargin animate__animated animate__fadeIn">
+
+    <img mat-card-image [src]="product | noImage" [alt]="product.DESCRIPCION">
+
+    <mat-card-content>
+        <p>{{product.DESCRIPCION}}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-raised-button color="primary"
+                [routerLink]="['/products/detail', product.IDPRODUCTO]">
+            More Info
+        </button>
+        <button mat-raised-button color="accent"
+                [routerLink]="['/products/edit', product.IDPRODUCTO]">
+            Edit
+        </button>
+    </mat-card-actions>
+
+</mat-card>

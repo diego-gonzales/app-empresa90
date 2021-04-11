@@ -1,0 +1,12 @@
+<h1>All Products</h1>
+<mat-divider></mat-divider>
+<br>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-evenly">
+    <div fxFlex="45" fxFlex.xs="100" fxFlex.md="30" fxFlex.lg="22"
+         *ngFor="let product of products">
+
+         <app-card-product [product]="product"></app-card-product>
+
+    </div>
+</div>

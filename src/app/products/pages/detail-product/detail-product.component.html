@@ -1,0 +1,45 @@
+<h1>Product Detail</h1>
+<mat-divider></mat-divider>
+
+<mat-grid-list cols="1" *ngIf="!product; else divProduct">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divProduct>
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly">
+    
+        <div fxFlex="35" class="mymargin animate__animated animate__fadeIn">
+            <h1>{{product.DESCRIPCION | uppercase}}</h1>
+            <mat-divider></mat-divider><br>
+            <img [src]="product | noImage" [alt]="product.DESCRIPCION">
+        </div>
+    
+        <div fxFlex="55" class="mymargin animate__animated animate__fadeInRightBig">
+            <h1>Information</h1>
+            <mat-divider></mat-divider>
+    
+            <mat-list role="list">
+                <mat-list-item role="listitem">
+                    <mat-icon mat-list-icon>monetization_on</mat-icon>
+                    Price: {{product.PRECIO | currency:'PEN':'S/.'}}
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                    <mat-icon mat-list-icon>inventory_2</mat-icon>
+                    Stock: {{product.STOCK}}
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                    <mat-icon mat-list-icon>bookmark</mat-icon>
+                    Status: {{product.ESTADOPRODUCTO | titlecase}}
+                </mat-list-item>
+            </mat-list>
+    
+            <button mat-raised-button color="primary"
+                    (click)="back()">
+                back
+            </button>
+        </div>
+    
+    </div>
+</ng-template>

@@ -1,0 +1,33 @@
+
+<div class="grid">
+    <div class="welcome">WELCOME</div>
+
+    <div class="form">
+        <form>
+            <p>
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input matInput placeholder="Enter your email">
+                  <mat-icon matSuffix>email</mat-icon>
+                  <mat-hint>Validation</mat-hint>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Enter your password">
+                  <mat-icon matSuffix>lock</mat-icon>
+                  <mat-hint>Validation</mat-hint>
+                </mat-form-field>
+            </p>
+        </form>
+    </div>
+
+    <div>
+        <button mat-raised-button
+                routerLink="/products">
+            Login
+        </button>
+    </div>
+
+</div>
