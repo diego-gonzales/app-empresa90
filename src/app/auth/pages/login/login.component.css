@@ -1,10 +1,10 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 100px 220px 50px;
+    grid-template-rows: 150px 220px 100px;
 
     justify-items: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .welcome {

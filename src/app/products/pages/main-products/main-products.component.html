@@ -25,9 +25,12 @@
             <mat-icon>menu</mat-icon>
         </button>
 
+        <h3>Welcome {{user | titlecase}}</h3>
+
         <span class="spacer"></span>
 
-        <button mat-raised-button routerLink="/main">
+        <button mat-raised-button
+                (click)="logout()">
             Logout
             <mat-icon>logout</mat-icon>
         </button>

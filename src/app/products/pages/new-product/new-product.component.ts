@@ -117,14 +117,18 @@ export class NewProductComponent implements OnInit {
   };
 
 
-  delete() {
+  delete( idProduct: number ) {
     const dialogRef = this.dialog.open(ConfirmComponent, { data: {...this.product}});
 
     dialogRef.afterClosed().subscribe( result => {
       if (result) {
-        // TODO hacer solicitud para eleminar el producto
-        this.openSnackBar('Product Deleted');
-        this.router.navigate(['/products/all']);
+        this.productService.deleteProduct(idProduct)
+            .subscribe( resp => {
+              if (resp === 200) {
+                this.openSnackBar('Product Deleted');
+                this.router.navigate(['/products/all']);
+              };
+            })
       }
     });
   };

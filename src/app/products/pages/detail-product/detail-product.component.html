@@ -8,15 +8,15 @@
 </mat-grid-list>
 
 <ng-template #divProduct>
-    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly">
+    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly" class="mypadding">
     
-        <div fxFlex="35" class="mymargin animate__animated animate__fadeIn">
+        <div fxFlex="25" class="mymargin animate__animated animate__fadeIn">
             <h1>{{product.DESCRIPCION | uppercase}}</h1>
             <mat-divider></mat-divider><br>
             <img [src]="product | noImage" [alt]="product.DESCRIPCION">
         </div>
     
-        <div fxFlex="55" class="mymargin animate__animated animate__fadeInRightBig">
+        <div fxFlex="45" class="mymargin animate__animated animate__fadeInRightBig">
             <h1>Information</h1>
             <mat-divider></mat-divider>
     

@@ -3,21 +3,30 @@
     <div class="welcome">WELCOME</div>
 
     <div class="form">
-        <form>
+        <form [formGroup]="myForm" autocomplete="off">
             <p>
                 <mat-form-field appearance="outline">
-                  <mat-label>Email</mat-label>
-                  <input matInput placeholder="Enter your email">
-                  <mat-icon matSuffix>email</mat-icon>
-                  <mat-hint>Validation</mat-hint>
+                    <mat-label>Enter your username</mat-label>
+                    <input matInput
+                           placeholder="Username"
+                           formControlName="user">
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-hint *ngIf="fieldIsInvalid('user')">
+                        Field Required
+                    </mat-hint>
                 </mat-form-field>
             </p>
             <p>
                 <mat-form-field appearance="outline">
-                  <mat-label>Password</mat-label>
-                  <input matInput placeholder="Enter your password">
-                  <mat-icon matSuffix>lock</mat-icon>
-                  <mat-hint>Validation</mat-hint>
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput
+                           placeholder="Password"
+                           formControlName="password"
+                           [type]="hide ? 'password' : 'text'">
+                    <mat-icon matSuffix (click)="hide=!hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-hint *ngIf="fieldIsInvalid('password')">
+                        Must be at least 6 characters
+                    </mat-hint>
                 </mat-form-field>
             </p>
         </form>
@@ -25,7 +34,8 @@
 
     <div>
         <button mat-raised-button
-                routerLink="/products">
+                (click)="signIn()"
+                [disabled]="myForm.invalid">
             Login
         </button>
     </div>
