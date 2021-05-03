@@ -1,0 +1,19 @@
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+}
+
+.my-text {
+    justify-self: center;
+    align-self: center;
+    text-align: justify;
+    max-width: 600px;
+}
+
+.my-card {
+    max-width: 500px;
+    justify-self: left;
+}

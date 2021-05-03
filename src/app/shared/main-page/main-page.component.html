@@ -2,17 +2,48 @@
 
     <mat-toolbar>
 
-        <h1>EMPRESA 90</h1>
+        <h1>EMPRESA DEMO</h1>
 
         <span class="spacer"></span>
 
         <button mat-raised-button
-                routerLink="/auth">
+                routerLink="/auth"
+                *ngIf="isLoggedIn">
             <mat-icon>account_circle</mat-icon>
             Login
         </button>
 
     </mat-toolbar>
+
+    <div class="grid">
+        <div class="my-text">
+            <h2>NEW PRODUCTS!!!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel maxime unde vero nobis consectetur quos eum exercitationem sint alias sit, voluptatibus rem officia animi optio quo non itaque eligendi maiores quam. Optio laborum, ex eum quo maxime iusto repellat vel esse ipsam quia rem odit possimus quos. Recusandae, cumque et.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci dicta veritatis expedita, rerum voluptatum nisi, corporis voluptatem, architecto debitis dolorem! Consectetur doloribus mollitia repellendus explicabo. Iusto laboriosam itaque ullam rem asperiores eos fugiat, error quae dolores voluptatum amet eius suscipit. Similique consequuntur commodi recusandae corporis odio dolor a. Voluptates.</p>
+        </div>
+        <div class="my-card">
+            <mat-card>
+                <mat-card-header>
+                  <mat-card-title>Products</mat-card-title>
+                  <!-- <mat-card-subtitle></mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image src="https://review.chinabrands.com/chinabrands/seo/image/20190220/20190220014558546479-1.png" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                  <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button color="primary"
+                          (click)="goToProductList()">
+                    Go to product list
+                  </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
 
 
 </mat-sidenav-container>

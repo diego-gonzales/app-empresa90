@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -7,8 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn: boolean = true;
 
-  ngOnInit(): void {
+  constructor( private router: Router ) { }
+
+  ngOnInit( ): void {
+    (localStorage.getItem('refresh-token'))
+          ? this.isLoggedIn = false
+          : this.isLoggedIn = true;
   }
+
+
+  goToProductList() {
+    (localStorage.getItem('refresh-token'))
+        ? this.router.navigateByUrl('/products')
+        : this.router.navigateByUrl('/auth');
+  };
 }
